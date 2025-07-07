@@ -1,5 +1,48 @@
 body {
-  font-family: "Kanit";
+  font-family: "Kanit", sans-serif;
+  background: #000;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Start coding here */
+.bubbletea-container {
+  position: relative;
+  width: 700px;
+  box-shadow: 0 0 0 8px #fff, 0 2px 16px rgba(0,0,0,0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.bubbletea-img {
+  width: 100%;
+  display: block;
+}
+
+.bubbletea-badge {
+  position: absolute;
+  top: 32px;
+  right: 0px;
+  background: rgba(120,120,120,0.8);
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.3em 1.2em;
+  border-radius: 4px;
+  font-family: inherit;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.bubbletea-caption {
+  position: absolute;
+  left: 24px;
+  bottom: 16px;
+  color: #fff;
+  font-size: 2rem;
+  font-family: serif;
+  text-shadow: 0 2px 8px #000, 0 0 2px #000;
+  z-index: 2;
+}

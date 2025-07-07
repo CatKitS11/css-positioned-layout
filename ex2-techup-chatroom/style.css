@@ -1,1 +1,152 @@
-/* Start coding here */
+body {
+    font-family: "Sarabun", sans-serif;
+    margin: 0;
+    background: #fff;
+  }
+  
+  /* ====== Chatroom Layout ====== */
+  .chatroom-outer {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: #fff;
+    padding-top: 40px;
+  }
+  
+  .chatroom-container {
+    width: 900px;
+    background: #fff;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  
+  .chatroom-header {
+    background: #888;
+    color: #fff;
+    font-size: 2.2rem;
+    padding: 0.5em 0.8em;
+    font-family: serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  
+  .chatroom-messages {
+    margin-top: 48px;
+    padding: 0 32px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* ====== Chat Bubble Styles ====== */
+  .chat-bubble {
+    display: inline-block;
+    min-width: 60px;
+    max-width: 350px;
+    padding: 0.7em 1.2em;
+    border-radius: 24px;
+    font-size: 1.3rem;
+    position: relative;
+    margin-bottom: 0.2em;
+    word-break: break-word;
+  }
+  
+  /* Alignment */
+  .chat-bubble--right {
+    align-self: flex-end;
+  }
+  .chat-bubble--left {
+    align-self: flex-start;
+    background: #888;
+    color: #fff;
+  }
+  
+  /* Bubble Colors */
+  .chat-bubble--green {
+    background: #00c000;
+    color: #fff;
+  }
+  .chat-bubble--gray {
+    background: #eee;
+    color: #222;
+    position: relative; /* For absolute x button */
+  }
+  
+  /* ====== Positioned Layout: Bubble Tail ====== */
+  .chat-bubble--green .chat-bubble-tail {
+    position: absolute;
+    right: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: transparent;
+  }
+  .chat-bubble--green .chat-bubble-tail::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(30deg);
+    width: 18px;
+    height: 18px;
+    background: #00c000;
+    border-radius: 0 0 18px 18px;
+    z-index: 1;
+  }
+  
+  /* ====== Positioned Layout: Close Button ====== */
+  .chat-bubble-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: #ccc;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 1.1em;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 1px 4px #bbb;
+    transition: background 0.2s;
+  }
+  .chat-bubble-close:hover {
+    background: #888;
+  }
+  
+  /* ====== Emoji Styles ====== */
+  /* Emoji in green bubble */
+  .chat-bubble--green .chat-emoji {
+    background: none;
+    color: inherit;
+    border-radius: 0;
+    padding: 0;
+    font-size: 2rem;
+    margin-right: 0.5em;
+  }
+  .chat-bubble--green .chat-emoji:last-child {
+    margin-right: 0;
+  }
+  /* Emoji in gray bubble (left) */
+  .chat-emoji {
+    font-size: 2rem;
+    background: #888;
+    color: #fff;
+    border-radius: 20px;
+    padding: 0.1em 0.6em;
+    display: inline-block;
+  }
+  
+  .chat-emoji-row {
+    display: flex;
+    gap: 0.5em;
+    margin-top: 0.2em;
+  }
+  .chat-emoji-row--right {
+    justify-content: flex-end;
+  }
+  
